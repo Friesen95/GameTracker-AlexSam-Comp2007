@@ -11,4 +11,11 @@
             <h1>Welcome to Stat-Tastic!</h1>
         </BodyContent>
     </bs3:Jumbotron>
+    <div class="row">
+        <div class="span4 collapse-group">
+          <h2><span class="glyphicons glyphicons-soccer-ball"></span> Soccer</h2>
+           <p class="collapse">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-collapse" href="#">View details &raquo;</a></p>
+        </div>
+      </div>
 </asp:Content>
