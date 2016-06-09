@@ -1,4 +1,10 @@
-﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="GameTracker_comp2007.Contact" %>
+﻿<!-- 
+    Author: Alex Friesen and Sam Sunny 
+    Stud #: 200302342 & 200300762
+    Date: June 6th, 2016
+    Description: This is our COntact page where you can send us an email
+    -->
+<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="GameTracker_comp2007.Contact" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">

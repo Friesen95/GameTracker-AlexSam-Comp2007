@@ -1,4 +1,8 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="GameTracker_comp2007.Site" %>
+﻿Author: Alex Friesen and Sam Sunny 
+    Stud #: 200302342 & 200300762
+    Date: June 6th, 2016
+    Description: This is our Master page for all our content pages
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="GameTracker_comp2007.Site" %>
 <%@ Register Src="~/User_Controls/Navbar.ascx" TagName="Navbar" TagPrefix="bs3" %>
 <!DOCTYPE html>
 <html lang="en">

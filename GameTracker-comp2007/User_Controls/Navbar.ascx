@@ -1,4 +1,10 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Navbar.ascx.cs" Inherits="GameTracker_comp2007.Navbar" %>
+﻿<!-- 
+    Author: Alex Friesen and Sam Sunny 
+    Stud #: 200302342 & 200300762
+    Date: June 6th, 2016
+    Description: This is our Navbar for our website
+    -->
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Navbar.ascx.cs" Inherits="GameTracker_comp2007.Navbar" %>
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
