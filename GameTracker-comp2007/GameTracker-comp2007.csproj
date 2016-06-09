@@ -71,7 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="GameCreator.aspx" />
-    <Content Include="GameList.aspx" />
     <Content Include="LogIn.aspx" />
     <Content Include="packages.config" />
     <Content Include="Register.aspx" />
@@ -140,13 +139,6 @@
     </Compile>
     <Compile Include="GameCreator.aspx.designer.cs">
       <DependentUpon>GameCreator.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GameList.aspx.cs">
-      <DependentUpon>GameList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GameList.aspx.designer.cs">
-      <DependentUpon>GameList.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
