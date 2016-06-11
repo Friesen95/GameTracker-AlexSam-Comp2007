@@ -2,3 +2,33 @@
     Stud #: 200302342 & 200300762
     Date: June 6th, 2016
     Description: This is custome css page */
+.title{
+    font-size: 4.0em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+.btn-collapse{
+    color:#212121;
+    font-size: medium;
+}
+a{
+    animation: none;
+    color: #607D8B;
+}
+body {
+    background-image: url('../Assets/Amex-Stadium-Brighton-2.jpg');
+}
+.jumbotron{
+    background: rgba(207, 216, 220, 0.50); 
+}
+h1{
+    color: white; 
+}
+.dark-primary-color    { background: #455A64; }
+.default-primary-color { background: #607D8B; }
+.light-primary-color   { background: #CFD8DC; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #FFEB3B; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }

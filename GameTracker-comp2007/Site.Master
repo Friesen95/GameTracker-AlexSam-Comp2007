@@ -1,9 +1,9 @@
-﻿<!-- Author: Alex Friesen and Sam Sunny 
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="GameTracker_comp2007.Site" %>
+<%@ Register Src="~/User_Controls/Navbar.ascx" TagName="Navbar" TagPrefix="bs3" %>
+<!-- Author: Alex Friesen and Sam Sunny 
     Stud #: 200302342 & 200300762
     Date: June 6th, 2016
     Description: This is our Master page for all our content pages -->
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="GameTracker_comp2007.Site" %>
-<%@ Register Src="~/User_Controls/Navbar.ascx" TagName="Navbar" TagPrefix="bs3" %>
 <!DOCTYPE html>
 <html lang="en">
 <head runat="server">
@@ -15,13 +15,13 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
-    <link href="Assets/glyphicons_free/glyphicons/png/" />
     <link href="Content/app.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+        <h1 class="title">StatTastic</h1>
     <bs3:Navbar runat="server" ID="PrimaryNav"></bs3:Navbar>
     <div>
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
