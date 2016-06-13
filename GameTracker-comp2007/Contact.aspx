@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="GameTracker_comp2007.Contact" %>
-<!-- 
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <!-- 
     Author: Alex Friesen and Sam Sunny 
     Stud #: 200302342 & 200300762
     Date: June 6th, 2016
     Description: This is our COntact page where you can send us an email
     -->
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="row">
             <div class="col-md-offset-2 col-md-6 text-center">
