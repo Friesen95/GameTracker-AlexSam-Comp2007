@@ -11,6 +11,11 @@
         </BodyContent>
     </bs3:Jumbotron>
     <div class="container">
+        <% if (Session["userName"] != null)
+            { %>
+        <div style="padding: 20px"><a href="GameCreator.aspx" class="jumbotron" style="padding: 13px;"><i class="fa fa-plus fa-lg"> Add Game</i></a></div>
+        <% } %>
+
         <div class="row">
             <div class="jumbotron">
                 <div class="span4 collapse-group">
