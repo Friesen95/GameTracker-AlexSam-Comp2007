@@ -13,5 +13,15 @@ namespace GameTracker_comp2007
         {
 
         }
+
+        protected void SoccerGamesGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
+        protected void SoccerGamesGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
     }
 }

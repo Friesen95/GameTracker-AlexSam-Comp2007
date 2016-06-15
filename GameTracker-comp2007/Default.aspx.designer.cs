@@ -22,39 +22,12 @@ namespace GameTracker_comp2007 {
         protected global::GameTracker_comp2007.User_Controls.Jumbotron Jumbotron1;
         
         /// <summary>
-        /// HomeTeamName control.
+        /// SoccerGamesGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label HomeTeamName;
-        
-        /// <summary>
-        /// AwayTeamName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AwayTeamName;
-        
-        /// <summary>
-        /// HomeTeamPoints control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label HomeTeamPoints;
-        
-        /// <summary>
-        /// AwayTeamPoints control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AwayTeamPoints;
+        protected global::System.Web.UI.WebControls.GridView SoccerGamesGridView;
     }
 }

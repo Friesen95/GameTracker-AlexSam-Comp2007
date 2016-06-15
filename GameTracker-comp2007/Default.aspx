@@ -19,15 +19,35 @@
                         Soccer &raquo;</a>
                     <div class="collapse">
                         <p>Have a soccer game displayed here with Team Name, scores, attendances and stadium</p>
-                        <div class="text-center">
-                            <asp:Label ID="HomeTeamName" runat="server" Text="HomeTeamNameLabel">Home Team</asp:Label>
-                            vs. 
-                        <asp:Label ID="AwayTeamName" runat="server" Text="HomeTeamNameLabel">Away Team</asp:Label>
-                            <br />
-                            <asp:Label ID="HomeTeamPoints" runat="server" Text="HomeTeamPointsLabel"> </asp:Label>
-                            :
-                        <asp:Label ID="AwayTeamPoints" runat="server" Text="HomeTeamPointsLabel"> </asp:Label>
+                        <!-- Next and Previous Button Goes here -->
+                        <div class="row">
+                            <div class="col-xs-6 col-md-4">
+                                Previous Button
+                            </div>
+                            <div class="col-xs-6 col-md-4">
+                                Current week 
+                            </div> 
+                        <div class="col-xs-6 col-md-4">
+                                Next Button
+                            </div>     
                         </div>
+                        <div class="text-center">
+                            <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
+                                ID="SoccerGamesGridView" AutoGenerateColumns="false" DataKeyNames="GameID"
+                                OnRowDeleting="SoccerGamesGridView_RowDeleting" AllowPaging ="true"
+                                PageSize="4" OnPageIndexChanging="SoccerGamesGridView_PageIndexChanging"
+                                AllowSorting="false">
+                                <Columns>
+                                    <asp:BoundField DataField="HomeTeamName" HeaderText="Home Team" Visible="true" />
+                                    <asp:BoundField DataField="HomeTeamPoints" HeaderText="Points" Visible="true" />
+                                    <asp:BoundField DataField="Vs" HeaderText="Vs" Visible="true" />
+                                    <asp:BoundField DataField="AwayTeamPoints" HeaderText="Points" Visible="true" />
+                                    <asp:BoundField DataField="AwayTeamName" HeaderText="Away Team" Visible="true" />
+                                    <asp:BoundField DataField="Attendances" HeaderText="Attendances" Visible="true" />
+                                    <asp:BoundField DataField="Stadium" HeaderText="Stadium" Visible="true" />
+                                </Columns>
+                            </asp:GridView>
+                           </div>
                     </div>
                 </div>
             </div>
