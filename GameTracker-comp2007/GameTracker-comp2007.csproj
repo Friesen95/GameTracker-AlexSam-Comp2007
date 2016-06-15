@@ -94,6 +94,7 @@
   <ItemGroup>
     <Content Include="GameCreator.aspx" />
     <Content Include="LogIn.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="Models\stattasticdb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>stattasticdb.edmx</DependentUpon>
@@ -185,6 +186,13 @@
     </Compile>
     <Compile Include="LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\game.cs">
       <DependentUpon>stattasticdb.tt</DependentUpon>
