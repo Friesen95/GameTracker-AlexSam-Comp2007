@@ -26,6 +26,10 @@
             <div class="row">
                 <img src="Assets/Logo.png" width="125" height="100"  style="float:left;" />
                 <h1 class="title" >StatTastic</h1>
+                <% if (Session["userName"] != null)
+                    { %>
+                <label style="float:right;color:white"><%Response.Write("Welcome " + Session["userName"]); %></label>
+                <%} %>
             </div>
         </div>
         <bs3:Navbar runat="server" ID="PrimaryNav"></bs3:Navbar>

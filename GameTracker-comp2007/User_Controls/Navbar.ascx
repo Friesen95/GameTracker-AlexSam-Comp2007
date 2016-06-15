@@ -22,7 +22,15 @@
             <ul class="nav navbar-nav navbar-right">
                 <li id="home" runat="server"><a href="Default.aspx"><i class="fa fa-home fa-lg"></i> Home</a></li>
                 <li id="contact" runat="server"><a href="Contact.aspx"><i class="fa fa-phone fa-lg"></i> Contact</a></li>
+                <% if (Session["userName"] != null)
+                    { %>
+                <li id="Li2" runat="server" ><a onclick="deleteSession()"><i class="fa fa-sign-in fa-lg"></i>Log Out</a></li>
+                <asp:Button runat="server" ID="btnHidden" cssClass="hidden" OnClick="btnHidden_Click" />
+                <% }
+                    else
+                   {%>
                 <li id="Li1" runat="server"><a href="LogIn.aspx"><i class="fa fa-sign-in fa-lg"></i> Log In</a></li>
+                <% } %>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

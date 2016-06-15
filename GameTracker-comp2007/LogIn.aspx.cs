@@ -29,6 +29,7 @@ namespace GameTracker_comp2007
 
                 if (loginUser != null)
                 {
+                    Session["userName"] = loginUser.FirstName;
                     Response.Redirect("Default.aspx");
                 }
                 else

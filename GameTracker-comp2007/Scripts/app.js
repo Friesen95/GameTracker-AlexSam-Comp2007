@@ -11,3 +11,8 @@ $('.row .btn-collapse').on('click', function (e) {
     var $collapse = $this.closest('.collapse-group').find('.collapse');
     $collapse.collapse('toggle');
 });
+
+deleteSession()
+{
+    document.getElementById("btnHidden").click();
+}
