@@ -27,7 +27,7 @@ namespace GameTracker_comp2007
          */
         protected void getGame()
         {
-            using (DefaultConnection db = new DefaultConnection())
+            using (comp2007db db = new comp2007db())
             {
 
             }
