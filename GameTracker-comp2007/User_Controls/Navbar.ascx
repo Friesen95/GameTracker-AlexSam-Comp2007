@@ -24,8 +24,8 @@
                 <li id="contact" runat="server"><a href="Contact.aspx"><i class="fa fa-phone fa-lg"></i> Contact</a></li>
                 <% if (Session["userName"] != null)
                     { %>
-                <li id="Li2" runat="server" ><a onclick="deleteSession()"><i class="fa fa-sign-in fa-lg"></i>Log Out</a></li>
-                <asp:Button runat="server" ID="btnHidden" cssClass="hidden" OnClick="btnHidden_Click" />
+                <li id="Li2" runat="server" ><a href="Logout.aspx"><i class="fa fa-sign-in fa-lg"></i>Log Out</a></li>
+                
                 <% }
                     else
                    {%>

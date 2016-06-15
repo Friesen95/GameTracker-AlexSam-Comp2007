@@ -41,11 +41,5 @@ namespace GameTracker_comp2007
             }
         }
 
-
-        protected void btnHidden_Click(object sender, EventArgs e)
-        {
-            Session.Abandon();
-            Response.Redirect("Default.aspx");
-        }
     }
 }
