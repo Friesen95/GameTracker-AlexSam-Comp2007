@@ -43,13 +43,13 @@
                                 PageSize="4" OnPageIndexChanging="SoccerGamesGridView_PageIndexChanging"
                                 AllowSorting="false">
                                 <Columns>
-                                    <asp:BoundField DataField="SoccerHomeTeamName" HeaderText="Home Team" Visible="true" />
-                                    <asp:BoundField DataField="SoccerHomeTeamPoints" HeaderText="Points" Visible="true" />
+                                    <asp:BoundField DataField="homeName" HeaderText="Home Team" Visible="true" />
+                                    <asp:BoundField DataField="homePoints" HeaderText="Points" Visible="true" />
                                     <asp:BoundField DataField="Vs" HeaderText="Vs" Visible="true" />
-                                    <asp:BoundField DataField="SoccerAwayTeamPoints" HeaderText="Points" Visible="true" />
-                                    <asp:BoundField DataField="SoccerAwayTeamName" HeaderText="Away Team" Visible="true" />
-                                    <asp:BoundField DataField="SoccerAttendances" HeaderText="Attendances" Visible="true" />
-                                    <asp:BoundField DataField="SoccerStadium" HeaderText="Stadium" Visible="true" />
+                                    <asp:BoundField DataField="awayPoints" HeaderText="Points" Visible="true" />
+                                    <asp:BoundField DataField="awayTeam" HeaderText="Away Team" Visible="true" />
+                                    <asp:BoundField DataField="attendances" HeaderText="Attendances" Visible="true" />
+                                    <asp:BoundField DataField="stadium" HeaderText="Stadium" Visible="true" />
                                     <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> Delete" ShowDeleteButton="true"
                             ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
                                 </Columns>
