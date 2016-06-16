@@ -50,8 +50,9 @@
                                     <asp:BoundField DataField="awayName" HeaderText="Away Team" Visible="true" />
                                     <asp:BoundField DataField="attendances" HeaderText="Attendances" Visible="true" />
                                     <asp:BoundField DataField="stadium" HeaderText="Stadium" Visible="true" />
-                                    <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> Delete" ShowDeleteButton="true"
+                                    <asp:CommandField  HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> Delete" ShowDeleteButton="true"
                             ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
+                                    
                                 </Columns>
                             </asp:GridView>
                            </div>

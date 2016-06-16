@@ -15,6 +15,12 @@ namespace GameTracker_comp2007
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if(Session["userName"]!=null)
+            {
+
+            }
+
             if(!IsPostBack)
             {
                 this.getSoccerGame();
@@ -32,7 +38,7 @@ namespace GameTracker_comp2007
         {
             using (comp2007db db = new comp2007db())
             {
-                var SoccerGames = (from allSoccerGames in db.games where allSoccerGames.sportType == "Soccer" orderby allSoccerGames.datePlayed
+                var SoccerGames = (from allSoccerGames in db.games where allSoccerGames.sportType == "Soccer" && allSoccerGames.datePlayed >= DateTime.Now orderby allSoccerGames.datePlayed
                              select allSoccerGames);
                 SoccerGamesGridView.DataSource = SoccerGames.AsQueryable().ToList();
                 SoccerGamesGridView.DataBind();
