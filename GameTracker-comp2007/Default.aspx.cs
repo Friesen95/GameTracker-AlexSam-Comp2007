@@ -25,11 +25,15 @@ namespace GameTracker_comp2007
          * @methods getGame
          * @return {void}
          */
-        protected void getGame()
+        protected void getSoccerGame()
         {
-            using (DefaultConnection db = new DefaultConnection())
+            using (comp2007db db = new comp2007db())
             {
-
+                var SoccerGames = (from allSoccerGames in db.games where allSoccerGames.datePlayed >= DateTime.Now 
+                             && allSoccerGames.sportType == "Soccer" orderby allSoccerGames.datePlayed
+                             select allSoccerGames);
+                SoccerGamesGridView.DataSource = SoccerGames.AsQueryable().ToList();
+                SoccerGamesGridView.DataBind();
             }
 
         }
@@ -41,7 +45,8 @@ namespace GameTracker_comp2007
 
         protected void SoccerGamesGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            SoccerGamesGridView.PageIndex = e.NewPageIndex;
+            this.getSoccerGame();
         }
     }
 }
