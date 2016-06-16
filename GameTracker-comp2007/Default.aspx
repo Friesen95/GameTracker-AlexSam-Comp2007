@@ -26,13 +26,13 @@
                         <p>Have a soccer game displayed here with Team Name, scores, attendances and stadium</p>
                         <!-- Next and Previous Button Goes here -->
                         <div class="row">
-                            <div class="col-xs-6 col-md-4">
+                            <div class="col-xs-4 col-md-4">
                                 Previous Button
                             </div>
-                            <div class="col-xs-6 col-md-4">
+                            <div class="col-xs-4 col-md-4">
                                 Current week 
                             </div> 
-                        <div class="col-xs-6 col-md-4">
+                        <div class="col-xs-4 col-md-4">
                                 Next Button
                             </div>     
                         </div>
