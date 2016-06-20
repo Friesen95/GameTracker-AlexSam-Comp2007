@@ -114,7 +114,8 @@ namespace GameTracker_comp2007
 
         protected void SoccerGamesGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            this.DeleteGame(sender, e, SoccerGamesGridView);
+            this.getSoccerGame(lowerIndex, higherIndex);
         }
         protected void SoccerGamesGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -124,7 +125,8 @@ namespace GameTracker_comp2007
 
         protected void BasketballGamesGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            this.DeleteGame(sender, e, BasketballGamesGridView);
+            this.getBasketballGame(lowerIndex, higherIndex);
         }
 
         protected void BasketballGamesGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -145,7 +147,8 @@ namespace GameTracker_comp2007
 
         protected void BaseballGamesGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            this.DeleteGame(sender, e, BaseballGamesGridView);
+            this.getBaseballGame(lowerIndex, higherIndex);
         }
 
         protected void BaseballGamesGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -176,7 +179,8 @@ namespace GameTracker_comp2007
 
         protected void HockeyGamesGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            this.DeleteGame(sender, e, HockeyGamesGridView);
+            this.getHockeyGame(lowerIndex, higherIndex);
         }
 
         protected void HockeyGamesGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -198,6 +202,20 @@ namespace GameTracker_comp2007
         {
             higherIndex += 7;
             lowerIndex += 7;
+        }
+        protected void DeleteGame(object sender, GridViewDeleteEventArgs e, GridView Games)
+        {
+            int selectedRow = e.RowIndex;
+            int gameId = Convert.ToInt32(Games.DataKeys[selectedRow].Values["Id"]);
+
+            using (comp2007db db = new comp2007db())
+            {
+                game deletedGame = (from gameRecord in db.games
+                                    where gameRecord.Id == gameId
+                                    select gameRecord).FirstOrDefault();
+                db.games.Remove(deletedGame);
+                db.SaveChanges();
+            }
         }
 
     }
