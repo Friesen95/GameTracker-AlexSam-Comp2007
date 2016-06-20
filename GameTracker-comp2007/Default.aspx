@@ -27,18 +27,13 @@
                         <!-- Next and Previous Button Goes here -->
                         <div class="row">
                             <div class="col-xs-4 col-md-4">
-                                <div class="btn btn-default">
-                                    <a onclick="PreviousButton_Clicked">Previous Button</a>
-                                </div>
+                                    <asp:Button Text="Previous" CssClass="btn btn-default" runat="server" OnClick="SoccerPreviousButton_Clicked" />
                             </div>
                             <div class="col-xs-4 col-md-4">
                                 Current week 
                             </div>
                             <div class="col-xs-4 col-md-4">
-                                <div class="btn btn-default">
-                                    <asp:Button Text="Next" runat="server" />
-                                    <a onclick="NextButton_Clicked">Next Button</a>
-                                </div>
+                                    <asp:Button Text="Next" CssClass="btn btn-default" runat="server" OnClick="SoccerNextButton_Clicked" />
                             </div>
                         </div>
                         <div class="text-center">
@@ -77,17 +72,13 @@
                     <p class="collapse">Have a Basketball game displayed here with Team Name, scores, attendances and stadium</p>
                     <div class="row">
                         <div class="col-xs-4 col-md-4">
-                            <div class="btn btn-default">
                                 <asp:Button Text="Previous" CssClass="btn btn-default" runat="server" OnClick="BasketballPreviousButton_Clicked" />
-                            </div>
                         </div>
                         <div class="col-xs-4 col-md-4">
                             Current week 
                         </div>
                         <div class="col-xs-4 col-md-4">
-                            <div class="btn btn-default">
                                 <asp:Button runat="server" Text="Next" CssClass="btn btn-default" OnClick="BasketBallNextButton_Clicked" />
-                            </div>
                         </div>
                     </div>
                     <div class="text-center">
@@ -119,20 +110,88 @@
         <div class="row">
             <div class="jumbotron">
                 <div class="span4 collapse-group">
-                    <a class="btn btn-collapse" href="#" role="button">
+                        <asp:LinkButton runat="server" CssClass="btn btn-collapse" OnClick="Clear_Click">                 
                         <img src="Assets/glyphicons_free/glyphicons/png/glyphicons-438-hockey.png" />
-                        Hockey &raquo;</a>
+                        Hockey &raquo;</asp:LinkButton>
                     <p class="collapse">Have a Hockey game displayed here with Team Name, scores, attendances and stadium</p>
+                <div class="row">
+                        <div class="col-xs-4 col-md-4">
+                                <asp:Button Text="Previous" CssClass="btn btn-default" runat="server" OnClick="HockeyPreviousButton_Clicked" />
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                            Current week 
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                                <asp:Button runat="server" Text="Next" CssClass="btn btn-default" OnClick="HockeyNextButton_Click" />
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
+                            ID="HockeyGamesGridView" AutoGenerateColumns="false" DataKeyNames="Id"
+                            OnRowDeleting="HockeyGamesGridView_RowDeleting" AllowPaging="true"
+                            PageSize="4" OnPageIndexChanging="HockeyGamesGridView_PageIndexChanging"
+                            AllowSorting="false">
+                            <Columns>
+                                <asp:BoundField DataField="homeName" HeaderText="Home Team" Visible="true" />
+                                <asp:BoundField DataField="homePoints" HeaderText="Points" Visible="true" />
+                                <asp:TemplateField HeaderText="VS">
+                                    <ItemTemplate>
+                                        <label>VS</label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:BoundField DataField="awayPoints" HeaderText="Points" Visible="true" />
+                                <asp:BoundField DataField="awayName" HeaderText="Away Team" Visible="true" />
+                                <asp:BoundField DataField="attendances" HeaderText="Attendances" Visible="true" />
+                                <asp:BoundField DataField="stadium" HeaderText="Stadium" Visible="true" />
+                                <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> Delete" ShowDeleteButton="true"
+                                    ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
+                            </Columns>
+                        </asp:GridView>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="jumbotron">
                 <div class="span4 collapse-group">
-                    <a class="btn btn-collapse" href="#" role="button">
+                        <asp:LinkButton runat="server" CssClass="btn btn-collapse" OnClick="Clear_Click">                 
                         <img src="Assets/glyphicons_free/glyphicons/png/glyphicons-312-baseball.png" />
-                        Baseball &raquo;</a>
+                        Baseball &raquo;</asp:LinkButton>
                     <p class="collapse">Have a Baseball game displayed here with Team Name, scores, attendances and stadium</p>
+                <div class="row">
+                        <div class="col-xs-4 col-md-4">
+                                <asp:Button Text="Previous" CssClass="btn btn-default" runat="server" OnClick="BaseballPreviousButton_Clicked" />
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                            Current week 
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                                <asp:Button runat="server" Text="Next" CssClass="btn btn-default" OnClick="BaseballNextButton_Clicked" />
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
+                            ID="BaseballGamesGridView" AutoGenerateColumns="false" DataKeyNames="Id"
+                            OnRowDeleting="BaseballGamesGridView_RowDeleting" AllowPaging="true"
+                            PageSize="4" OnPageIndexChanging="BaseballGamesGridView_PageIndexChanging"
+                            AllowSorting="false">
+                            <Columns>
+                                <asp:BoundField DataField="homeName" HeaderText="Home Team" Visible="true" />
+                                <asp:BoundField DataField="homePoints" HeaderText="Points" Visible="true" />
+                                <asp:TemplateField HeaderText="VS">
+                                    <ItemTemplate>
+                                        <label>VS</label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:BoundField DataField="awayPoints" HeaderText="Points" Visible="true" />
+                                <asp:BoundField DataField="awayName" HeaderText="Away Team" Visible="true" />
+                                <asp:BoundField DataField="attendances" HeaderText="Attendances" Visible="true" />
+                                <asp:BoundField DataField="stadium" HeaderText="Stadium" Visible="true" />
+                                <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> Delete" ShowDeleteButton="true"
+                                    ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
+                            </Columns>
+                        </asp:GridView>
+                    </div>
                 </div>
             </div>
         </div>

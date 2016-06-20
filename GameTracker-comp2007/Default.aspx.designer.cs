@@ -38,5 +38,23 @@ namespace GameTracker_comp2007 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView BasketballGamesGridView;
+        
+        /// <summary>
+        /// HockeyGamesGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView HockeyGamesGridView;
+        
+        /// <summary>
+        /// BaseballGamesGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView BaseballGamesGridView;
     }
 }

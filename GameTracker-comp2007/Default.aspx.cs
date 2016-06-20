@@ -13,7 +13,7 @@ namespace GameTracker_comp2007
 {
     public partial class Default : System.Web.UI.Page
     {
-        int lowerIndex = 0, higherIndex = 7;
+        protected int lowerIndex = 0, higherIndex = 7;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -111,6 +111,16 @@ namespace GameTracker_comp2007
             higherIndex += 7;
             lowerIndex += 7;
         }
+        protected void SoccerPreviousButton_Clicked(object sender, EventArgs e)
+        {
+            this.PreviousButton_Clicked();
+            this.getSoccerGame(lowerIndex, higherIndex);
+        }
+        protected void SoccerNextButton_Clicked(object sender, EventArgs e)
+        {
+            this.NextButton_Clicked();
+            this.getSoccerGame(lowerIndex, higherIndex);
+        }
 
         protected void SoccerGamesGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -131,6 +141,39 @@ namespace GameTracker_comp2007
         {
             higherIndex = 7;
             lowerIndex = 0;
+        }
+
+        protected void BaseballGamesGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
+        protected void BaseballGamesGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
+        protected void BaseballPreviousButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        protected void BaseballNextButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void HockeyNextButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void HockeyGamesGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
+        protected void HockeyGamesGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
         }
 
         protected void SoccerGamesGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
