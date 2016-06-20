@@ -31,7 +31,9 @@ namespace GameTracker_comp2007
         protected void getGame()
         {
             this.getSoccerGame(lowerIndex, higherIndex);
-
+            this.getHockeyGame(lowerIndex, higherIndex);
+            this.getBaseballGame(lowerIndex, higherIndex);
+            this.getBasketballGame(lowerIndex, higherIndex);
         }
         
         /*<summary>
@@ -99,18 +101,6 @@ namespace GameTracker_comp2007
             }
 
         }
-
-        protected void PreviousButton_Clicked()
-        {
-            higherIndex -= 7;
-            lowerIndex -= 7;
-        }
-
-        protected void NextButton_Clicked()
-        {
-            higherIndex += 7;
-            lowerIndex += 7;
-        }
         protected void SoccerPreviousButton_Clicked(object sender, EventArgs e)
         {
             this.PreviousButton_Clicked();
@@ -126,6 +116,11 @@ namespace GameTracker_comp2007
         {
 
         }
+        protected void SoccerGamesGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            SoccerGamesGridView.PageIndex = e.NewPageIndex;
+            this.getSoccerGame(lowerIndex, higherIndex);
+        }
 
         protected void BasketballGamesGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -136,12 +131,17 @@ namespace GameTracker_comp2007
         {
 
         }
-
-        protected void Clear_Click(object sender, EventArgs e)
+        protected void BasketballPreviousButton_Clicked(object sender, EventArgs e)
         {
-            higherIndex = 7;
-            lowerIndex = 0;
+            this.PreviousButton_Clicked();
+            this.getBasketballGame(lowerIndex, higherIndex);
         }
+        protected void BasketBallNextButton_Clicked(object sender, EventArgs e)
+        {
+            this.NextButton_Clicked();
+            this.getBasketballGame(lowerIndex, higherIndex);
+        }
+
 
         protected void BaseballGamesGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -154,16 +154,24 @@ namespace GameTracker_comp2007
         }
         protected void BaseballPreviousButton_Clicked(object sender, EventArgs e)
         {
-
+            this.PreviousButton_Clicked();
+            this.getBaseballGame(lowerIndex, higherIndex);
         }
         protected void BaseballNextButton_Clicked(object sender, EventArgs e)
         {
-
+            this.NextButton_Clicked();
+            this.getBaseballGame(lowerIndex, higherIndex);
         }
 
         protected void HockeyNextButton_Click(object sender, EventArgs e)
         {
-
+            this.NextButton_Clicked();
+            this.getHockeyGame(lowerIndex,higherIndex);
+        }
+        protected void HockeyPreviousButton_Clicked(object sender, EventArgs e)
+        {
+            this.PreviousButton_Clicked();
+            this.getHockeyGame(lowerIndex, higherIndex);
         }
 
         protected void HockeyGamesGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -175,11 +183,22 @@ namespace GameTracker_comp2007
         {
 
         }
-
-        protected void SoccerGamesGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void Clear_Click(object sender, EventArgs e)
         {
-            SoccerGamesGridView.PageIndex = e.NewPageIndex;
-            this.getSoccerGame(lowerIndex, higherIndex);
+            higherIndex = 7;
+            lowerIndex = 0;
         }
+        protected void PreviousButton_Clicked()
+        {
+            higherIndex -= 7;
+            lowerIndex -= 7;
+        }
+
+        protected void NextButton_Clicked()
+        {
+            higherIndex += 7;
+            lowerIndex += 7;
+        }
+
     }
 }
