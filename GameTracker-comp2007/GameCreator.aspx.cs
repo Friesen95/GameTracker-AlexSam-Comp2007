@@ -58,7 +58,7 @@ namespace GameTracker_comp2007
                 // use the syudent model to save a new record
                 game newGame = new game();
 
-            int GameID = 0;
+            int GameID = -1;
 
             if (Request.QueryString.Count > 0)
             {
@@ -78,7 +78,7 @@ namespace GameTracker_comp2007
             newGame.datePlayed = Convert.ToDateTime(datePlayedTextBox.Text);
 
             // add a new game to Games Table Collection
-            if (GameID == 0)
+            if (GameID == -1)
             {
                 db.games.Add(newGame);
             }

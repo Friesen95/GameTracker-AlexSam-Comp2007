@@ -16,6 +16,12 @@ namespace GameTracker_comp2007
         int lowerIndex = 0, higherIndex = 7;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if(Session["userName"]!=null)
+            {
+
+            }
+
             if(!IsPostBack)
             {
                 this.getGame();
