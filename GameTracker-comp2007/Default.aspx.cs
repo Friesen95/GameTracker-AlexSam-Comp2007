@@ -45,10 +45,9 @@ namespace GameTracker_comp2007
         {
             using (comp2007db db = new comp2007db())
             {
-                var SoccerGames = (from allSoccerGames in db.games where 
-                                  
-                                   allSoccerGames.datePlayed >= allSoccerGames.datePlayed.Date.AddDays(lowerIndex)
-                                   && allSoccerGames.datePlayed <= allSoccerGames.datePlayed.Date.AddDays(higherIndex) 
+                var SoccerGames = (from allSoccerGames in db.games where
+                                   allSoccerGames.datePlayed >= DateTime.Now.AddDays(lowerIndex)
+                                   && allSoccerGames.datePlayed <= DateTime.Now.AddDays(higherIndex)
                                    && allSoccerGames.sportType == "Soccer" orderby allSoccerGames.datePlayed
                              select allSoccerGames);
                 SoccerGamesGridView.DataSource = SoccerGames.AsQueryable().ToList();
@@ -60,11 +59,9 @@ namespace GameTracker_comp2007
         {
             using (comp2007db db = new comp2007db())
             {
-                var BasketballGames = (from allBasketballGames in db.games
-                                   where
-
-   allBasketballGames.datePlayed >= allBasketballGames.datePlayed.Date.AddDays(lowerIndex)
-   && allBasketballGames.datePlayed <= allBasketballGames.datePlayed.Date.AddDays(higherIndex)
+                var BasketballGames = (from allBasketballGames in db.games where
+   allBasketballGames.datePlayed >= DateTime.Now.AddDays(lowerIndex)
+   && allBasketballGames.datePlayed <= DateTime.Now.AddDays(higherIndex)
    && allBasketballGames.sportType == "Basketball"
                                    orderby allBasketballGames.datePlayed
                                    select allBasketballGames);
@@ -77,11 +74,9 @@ namespace GameTracker_comp2007
         {
             using (comp2007db db = new comp2007db())
             {
-                var BaseballGames = (from allBaseballGames in db.games
-                                   where
-
-   allBaseballGames.datePlayed >= allBaseballGames.datePlayed.Date.AddDays(lowerIndex)
-   && allBaseballGames.datePlayed <= allBaseballGames.datePlayed.Date.AddDays(higherIndex)
+                var BaseballGames = (from allBaseballGames in db.games where
+   allBaseballGames.datePlayed >= DateTime.Now.AddDays(lowerIndex)
+   && allBaseballGames.datePlayed <= DateTime.Now.AddDays(higherIndex)
    && allBaseballGames.sportType == "Baseball"
                                    orderby allBaseballGames.datePlayed
                                    select allBaseballGames);
@@ -93,11 +88,9 @@ namespace GameTracker_comp2007
         {
             using (comp2007db db = new comp2007db())
             {
-                var HockeyGames = (from allHockeyGames in db.games
-                                     where
-
-     allHockeyGames.datePlayed >= allHockeyGames.datePlayed.Date.AddDays(lowerIndex)
-     && allHockeyGames.datePlayed <= allHockeyGames.datePlayed.Date.AddDays(higherIndex)
+                var HockeyGames = (from allHockeyGames in db.games where
+     allHockeyGames.datePlayed >= DateTime.Now.AddDays(lowerIndex)
+     && allHockeyGames.datePlayed <= DateTime.Now.AddDays(higherIndex)
      && allHockeyGames.sportType == "Hockey"
                                      orderby allHockeyGames.datePlayed
                                      select allHockeyGames);
