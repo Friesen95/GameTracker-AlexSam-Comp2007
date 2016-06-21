@@ -12,17 +12,23 @@ using System.Linq.Dynamic;
 namespace GameTracker_comp2007
 {
     public partial class Default : System.Web.UI.Page
-    {
-        protected int lowerIndex = 0, higherIndex = 7;
+    {   
+        protected int lowerIndex = 0, higherIndex =7;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
 
-            if(Session["userName"]!=null)
+            if (Session["flag"] == null)
             {
-
+                Session["flag"] = true;
+                Session["lowerIndex"] = "0";
+                Session["higherindex"] = "7";
             }
 
-            if(!IsPostBack)
+            lowerIndex = Convert.ToInt32(Session["lowerIndex"].ToString());
+            higherIndex = Convert.ToInt32(Session["higherIndex"].ToString());
+
+            if (!IsPostBack)
             {
                 this.getGame();
             }
@@ -47,9 +53,11 @@ namespace GameTracker_comp2007
         {
             using (comp2007db db = new comp2007db())
             {
+                var higherDate = DateTime.Now.AddDays(higherIndex);
+                var lowerDate = DateTime.Now.AddDays(lowerIndex);
                 var SoccerGames = (from allSoccerGames in db.games where
-                                   allSoccerGames.datePlayed >= DateTime.Now.AddDays(lowerIndex)
-                                   && allSoccerGames.datePlayed <= DateTime.Now.AddDays(higherIndex)
+                                   allSoccerGames.datePlayed >= lowerDate
+                                   && allSoccerGames.datePlayed <= higherDate
                                    && allSoccerGames.sportType == "Soccer" orderby allSoccerGames.datePlayed
                              select allSoccerGames);
                 SoccerGamesGridView.DataSource = SoccerGames.AsQueryable().ToList();
@@ -61,9 +69,11 @@ namespace GameTracker_comp2007
         {
             using (comp2007db db = new comp2007db())
             {
+                var higherDate = DateTime.Now.AddDays(higherIndex);
+                var lowerDate = DateTime.Now.AddDays(lowerIndex);
                 var BasketballGames = (from allBasketballGames in db.games where
-   allBasketballGames.datePlayed >= DateTime.Now.AddDays(lowerIndex)
-   && allBasketballGames.datePlayed <= DateTime.Now.AddDays(higherIndex)
+   allBasketballGames.datePlayed >= lowerDate
+   && allBasketballGames.datePlayed <= higherDate
    && allBasketballGames.sportType == "Basketball"
                                    orderby allBasketballGames.datePlayed
                                    select allBasketballGames);
@@ -76,9 +86,11 @@ namespace GameTracker_comp2007
         {
             using (comp2007db db = new comp2007db())
             {
+                var higherDate = DateTime.Now.AddDays(higherIndex);
+                var lowerDate = DateTime.Now.AddDays(lowerIndex);
                 var BaseballGames = (from allBaseballGames in db.games where
-   allBaseballGames.datePlayed >= DateTime.Now.AddDays(lowerIndex)
-   && allBaseballGames.datePlayed <= DateTime.Now.AddDays(higherIndex)
+   allBaseballGames.datePlayed >= lowerDate
+   && allBaseballGames.datePlayed <= higherDate
    && allBaseballGames.sportType == "Baseball"
                                    orderby allBaseballGames.datePlayed
                                    select allBaseballGames);
@@ -90,9 +102,11 @@ namespace GameTracker_comp2007
         {
             using (comp2007db db = new comp2007db())
             {
+                var higherDate = DateTime.Now.AddDays(higherIndex);
+                var lowerDate = DateTime.Now.AddDays(lowerIndex);
                 var HockeyGames = (from allHockeyGames in db.games where
-     allHockeyGames.datePlayed >= DateTime.Now.AddDays(lowerIndex)
-     && allHockeyGames.datePlayed <= DateTime.Now.AddDays(higherIndex)
+     allHockeyGames.datePlayed >= lowerDate
+     && allHockeyGames.datePlayed <= higherDate
      && allHockeyGames.sportType == "Hockey"
                                      orderby allHockeyGames.datePlayed
                                      select allHockeyGames);
@@ -189,19 +203,23 @@ namespace GameTracker_comp2007
         }
         protected void Clear_Click(object sender, EventArgs e)
         {
-            higherIndex = 7;
-            lowerIndex = 0;
+         //   higherIndex = 7;
+         //   lowerIndex = 0;
         }
         protected void PreviousButton_Clicked()
         {
-            higherIndex -= 7;
-            lowerIndex -= 7;
+            Session["higherIndex"] = Convert.ToInt32(Session["higherIndex"]) - 7;
+            Session["lowerIndex"] = Convert.ToInt32(Session["lowerIndex"]) -7;
+            // higherIndex -= 7;
+            // lowerIndex -= 7;
         }
 
         protected void NextButton_Clicked()
         {
-            higherIndex += 7;
-            lowerIndex += 7;
+            Session["higherIndex"] = Convert.ToInt32(Session["higherIndex"]) + 7;
+            Session["lowerIndex"] = Convert.ToInt32(Session["lowerIndex"]) + 7;
+            // higherIndex += 7;
+            // lowerIndex += 7;
         }
         protected void DeleteGame(object sender, GridViewDeleteEventArgs e, GridView Games)
         {
