@@ -124,6 +124,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\glyphicons-330-soccer-ball.png" />
     <Content Include="GameCreator.aspx" />
     <Content Include="LogIn.aspx" />
     <Content Include="Logout.aspx" />

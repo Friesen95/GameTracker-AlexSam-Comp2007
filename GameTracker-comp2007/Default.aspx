@@ -20,7 +20,7 @@
             <div class="jumbotron">
                 <div class="span4 collapse-group">
                     <asp:LinkButton runat="server" CssClass="btn btn-collapse" OnClick="Clear_Click">
-                        <img src="<%=ResolveUrl("~/Assets/glyphicons_free/glyphicons/png/glyphicons-330-soccer-ball.png") %>" />
+                       <img src="Content/glyphicons-330-soccer-ball.png" />
                         Soccer &raquo;</asp:LinkButton>
                     <div class="collapse">
                         <p>Have a soccer game displayed here with Team Name, scores, attendances and stadium</p>
