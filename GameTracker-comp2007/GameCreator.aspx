@@ -7,7 +7,7 @@
     Date: June 6th, 2016
     Description: This will be the page/form to create a game
     -->
-    <% if (Session["userName"] == null) Response.Redirect("LogIn.aspx"); %>  <!-- user Autherization -->
+    <% if (Session["userName"] == null) Response.Redirect("Login.aspx"); %>
     <div class="container jumbotron">
         <div class="col-md-offset-3 col-md-6">
             <h1>Game Details</h1>

@@ -22,6 +22,15 @@ namespace GameTracker_comp2007 {
         protected global::GameTracker_comp2007.User_Controls.Jumbotron Jumbotron1;
         
         /// <summary>
+        /// soccerDateLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label soccerDateLabel;
+        
+        /// <summary>
         /// SoccerGamesGridView control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace GameTracker_comp2007 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView SoccerGamesGridView;
+        
+        /// <summary>
+        /// basketballDateLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label basketballDateLabel;
         
         /// <summary>
         /// BasketballGamesGridView control.
@@ -40,6 +58,15 @@ namespace GameTracker_comp2007 {
         protected global::System.Web.UI.WebControls.GridView BasketballGamesGridView;
         
         /// <summary>
+        /// hockeyDateLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label hockeyDateLabel;
+        
+        /// <summary>
         /// HockeyGamesGridView control.
         /// </summary>
         /// <remarks>
@@ -47,6 +74,15 @@ namespace GameTracker_comp2007 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView HockeyGamesGridView;
+        
+        /// <summary>
+        /// baseballDateLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label baseballDateLabel;
         
         /// <summary>
         /// BaseballGamesGridView control.

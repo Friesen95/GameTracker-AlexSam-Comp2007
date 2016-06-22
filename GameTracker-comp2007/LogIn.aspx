@@ -13,9 +13,13 @@
             <h1>Login</h1>
             
             <br />
-            <div class="form-group">
+            <%--<div class="form-group">
                 <label class="" for="email">E-mail :</label>
                 <asp:TextBox runat="server" id="emailTextBox" CssClass="form-control" placeholder="Email" required="true"></asp:TextBox>
+            </div>--%>
+            <div class="form-group">
+                <label class="" for="userNameTextBox">User Name :</label>
+                <asp:TextBox runat="server" id="userNameTextBox" CssClass="form-control" placeholder="User Name" required="true"></asp:TextBox>
             </div>
             <div class="form-group">
                 <label class="" for="password">Password :</label>
@@ -29,6 +33,9 @@
                 <asp:Button Text="Login" ID="LoginButton" runat="server" CssClass="btn btn-primary btn-lg" OnClick="LoginButton_Click" />
              </div>
             <br />
+            <div class="alert alert-danger" id="alertFlash" runat="server" visible="false">
+                <asp:Label runat="server" ID="statusLabel"></asp:Label>
+            </div>
             <div class="text-right">
                 <a href="Register.aspx">Not a member yet? Register here</a>
             </div>

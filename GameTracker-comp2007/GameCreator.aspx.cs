@@ -14,6 +14,7 @@ namespace GameTracker_comp2007
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            sportTypeTextBox.DataBind();
             if (!IsPostBack && (Request.QueryString.Count > 0))
             {
                 this.GetGame();
@@ -22,7 +23,7 @@ namespace GameTracker_comp2007
 
         private void GetGame()
         {
-            int GameID = Convert.ToInt32(Request.QueryString["GameID"]);
+            int GameID = Convert.ToInt32(Request.QueryString["Id"]);
 
             //connect to DB
             using (comp2007db db = new comp2007db())
@@ -58,12 +59,12 @@ namespace GameTracker_comp2007
                 // use the syudent model to save a new record
                 game newGame = new game();
 
-            int GameID = -1;
+            int GameID = 0;
 
             if (Request.QueryString.Count > 0)
             {
                 // get game id from url
-                GameID = Convert.ToInt32(Request.QueryString["GameID"]);
+                GameID = Convert.ToInt32(Request.QueryString["Id"]);
                 // get the current Game from the DB
                 newGame = (from game in db.games where game.Id == GameID select game).FirstOrDefault();
             }
@@ -78,15 +79,18 @@ namespace GameTracker_comp2007
             newGame.datePlayed = Convert.ToDateTime(datePlayedTextBox.Text);
 
             // add a new game to Games Table Collection
-            if (GameID == -1)
-            {
+            if (GameID == 0)
+            {              
                 db.games.Add(newGame);
             }
 
-            // run insert commands to database
-            db.SaveChanges();
-
-            Response.Redirect("~/Default.aspx");
+                // run insert commands to database
+                
+                
+                    db.SaveChanges();
+                
+                
+                Response.Redirect("~/Default.aspx");
         }
 
     }

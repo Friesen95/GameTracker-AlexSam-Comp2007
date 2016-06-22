@@ -30,6 +30,8 @@ namespace GameTracker_comp2007
 
             if (!IsPostBack)
             {
+                lowerIndex = Convert.ToInt32(Session["lowerIndex"].ToString());
+                higherIndex = Convert.ToInt32(Session["higherIndex"].ToString());
                 this.getGame();
             }
         }
@@ -62,6 +64,7 @@ namespace GameTracker_comp2007
                              select allSoccerGames);
                 SoccerGamesGridView.DataSource = SoccerGames.AsQueryable().ToList();
                 SoccerGamesGridView.DataBind();
+                soccerDateLabel.Text = lowerDate.ToString("yyy-MM-dd") + " - " +higherDate.ToString("yyy-MM-dd");
             }
 
         }
@@ -79,6 +82,8 @@ namespace GameTracker_comp2007
                                    select allBasketballGames);
                 BasketballGamesGridView.DataSource = BasketballGames.AsQueryable().ToList();
                 BasketballGamesGridView.DataBind();
+                basketballDateLabel.Text = lowerDate.ToString("yyy-MM-dd") + " - " + higherDate.ToString("yyy-MM-dd");
+
             }
 
         }
@@ -94,8 +99,11 @@ namespace GameTracker_comp2007
    && allBaseballGames.sportType == "Baseball"
                                    orderby allBaseballGames.datePlayed
                                    select allBaseballGames);
+                
                 BaseballGamesGridView.DataSource = BaseballGames.AsQueryable().ToList();
                 BaseballGamesGridView.DataBind();
+                baseballDateLabel.Text = lowerDate.ToString("yyy-MM-dd") + " - " + higherDate.ToString("yyy-MM-dd");
+
             }
         }
         protected void getHockeyGame(int lowerIndex, int higherIndex)
@@ -112,17 +120,20 @@ namespace GameTracker_comp2007
                                      select allHockeyGames);
                 HockeyGamesGridView.DataSource = HockeyGames.AsQueryable().ToList();
                 HockeyGamesGridView.DataBind();
+                hockeyDateLabel.Text = lowerDate.ToString("yyy-MM-dd") + " - " + higherDate.ToString("yyy-MM-dd");
             }
 
         }
         protected void SoccerPreviousButton_Clicked(object sender, EventArgs e)
         {
             this.PreviousButton_Clicked();
+            Response.Redirect("Default.aspx");
             this.getSoccerGame(lowerIndex, higherIndex);
         }
         protected void SoccerNextButton_Clicked(object sender, EventArgs e)
         {
             this.NextButton_Clicked();
+            Response.Redirect("Default.aspx");
             this.getSoccerGame(lowerIndex, higherIndex);
         }
 
@@ -150,11 +161,13 @@ namespace GameTracker_comp2007
         protected void BasketballPreviousButton_Clicked(object sender, EventArgs e)
         {
             this.PreviousButton_Clicked();
+            Response.Redirect("Default.aspx");
             this.getBasketballGame(lowerIndex, higherIndex);
         }
         protected void BasketBallNextButton_Clicked(object sender, EventArgs e)
         {
             this.NextButton_Clicked();
+            Response.Redirect("Default.aspx");
             this.getBasketballGame(lowerIndex, higherIndex);
         }
 
@@ -172,22 +185,26 @@ namespace GameTracker_comp2007
         protected void BaseballPreviousButton_Clicked(object sender, EventArgs e)
         {
             this.PreviousButton_Clicked();
+            Response.Redirect("Default.aspx");
             this.getBaseballGame(lowerIndex, higherIndex);
         }
         protected void BaseballNextButton_Clicked(object sender, EventArgs e)
         {
             this.NextButton_Clicked();
+            Response.Redirect("Default.aspx");
             this.getBaseballGame(lowerIndex, higherIndex);
         }
 
         protected void HockeyNextButton_Click(object sender, EventArgs e)
         {
             this.NextButton_Clicked();
+            Response.Redirect("Default.aspx");
             this.getHockeyGame(lowerIndex,higherIndex);
         }
         protected void HockeyPreviousButton_Clicked(object sender, EventArgs e)
         {
             this.PreviousButton_Clicked();
+            Response.Redirect("Default.aspx");
             this.getHockeyGame(lowerIndex, higherIndex);
         }
 
@@ -208,16 +225,16 @@ namespace GameTracker_comp2007
         }
         protected void PreviousButton_Clicked()
         {
-            Session["higherIndex"] = Convert.ToInt32(Session["higherIndex"]) - 7;
-            Session["lowerIndex"] = Convert.ToInt32(Session["lowerIndex"]) -7;
+            Session["higherIndex"] = (Convert.ToInt32(Session["higherIndex"].ToString()) - 7).ToString();
+            Session["lowerIndex"] = (Convert.ToInt32(Session["lowerIndex"].ToString()) -7).ToString();
             // higherIndex -= 7;
             // lowerIndex -= 7;
         }
 
         protected void NextButton_Clicked()
         {
-            Session["higherIndex"] = Convert.ToInt32(Session["higherIndex"]) + 7;
-            Session["lowerIndex"] = Convert.ToInt32(Session["lowerIndex"]) + 7;
+            Session["higherIndex"] = (Convert.ToInt32(Session["higherIndex"].ToString()) + 7).ToString();
+            Session["lowerIndex"] = (Convert.ToInt32(Session["lowerIndex"].ToString()) + 7).ToString();
             // higherIndex += 7;
             // lowerIndex += 7;
         }
@@ -225,7 +242,7 @@ namespace GameTracker_comp2007
         {
             int selectedRow = e.RowIndex;
             int gameId = Convert.ToInt32(Games.DataKeys[selectedRow].Values["Id"]);
-
+            if(Session["userName"] == null) { Response.Redirect("Login.aspx"); }
             using (comp2007db db = new comp2007db())
             {
                 game deletedGame = (from gameRecord in db.games

@@ -27,13 +27,13 @@
                         <!-- Next and Previous Button Goes here -->
                         <div class="row">
                             <div class="col-xs-4 col-md-4">
-                                    <asp:Button Text="Previous" CssClass="btn btn-default" runat="server" OnClick="SoccerPreviousButton_Clicked" />
+                                    <asp:Button Text="Previous Week" CssClass="btn btn-default" runat="server" OnClick="SoccerPreviousButton_Clicked" />
                             </div>
                             <div class="col-xs-4 col-md-4">
-                                Current week 
+                                <label>Date: </label> <asp:Label runat="server" ID="soccerDateLabel"></asp:Label>
                             </div>
                             <div class="col-xs-4 col-md-4">
-                                    <asp:Button Text="Next" CssClass="btn btn-default" runat="server" OnClick="SoccerNextButton_Clicked" />
+                                    <asp:Button Text="Next Week" CssClass="btn btn-default" runat="server" OnClick="SoccerNextButton_Clicked" />
                             </div>
                         </div>
                         <div class="text-center">
@@ -54,8 +54,11 @@
                                     <asp:BoundField DataField="awayName" HeaderText="Away Team" Visible="true" />
                                     <asp:BoundField DataField="attendances" HeaderText="Attendances" Visible="true" />
                                     <asp:BoundField DataField="stadium" HeaderText="Stadium" Visible="true" />
+                                    <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> Edit" NavigateUrl="~/GameCreator.aspx.cs"
+                            DataNavigateUrlFields="Id" DataNavigateUrlFormatString="GameCreator.aspx?Id={0}" 
+                            ItemStyle-CssClass="btn btn-primary btn-sm" ControlStyle-ForeColor="White"/>
                                     <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> Delete" ShowDeleteButton="true"
-                                        ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
+                                        ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm"/>
                                 </Columns>
                             </asp:GridView>
                         </div>
@@ -69,16 +72,17 @@
                     <asp:LinkButton runat="server" CssClass="btn btn-collapse" OnClick="Clear_Click">
                         <img src="Assets/glyphicons_free/glyphicons/png/glyphicons-463-basketball.png" />
                         Basketball &raquo;</asp:LinkButton>
-                    <p class="collapse">Have a Basketball game displayed here with Team Name, scores, attendances and stadium</p>
+                    <div class="collapse">
+                    <p>Have a Basketball game displayed here with Team Name, scores, attendances and stadium</p>
                     <div class="row">
                         <div class="col-xs-4 col-md-4">
-                                <asp:Button Text="Previous" CssClass="btn btn-default" runat="server" OnClick="BasketballPreviousButton_Clicked" />
+                                <asp:Button Text="Previous Week" CssClass="btn btn-default" runat="server" OnClick="BasketballPreviousButton_Clicked" />
                         </div>
                         <div class="col-xs-4 col-md-4">
-                            Current week 
+                             <label>Date: </label> <asp:Label runat="server" ID="basketballDateLabel"></asp:Label>
                         </div>
                         <div class="col-xs-4 col-md-4">
-                                <asp:Button runat="server" Text="Next" CssClass="btn btn-default" OnClick="BasketBallNextButton_Clicked" />
+                                <asp:Button runat="server" Text="Next Week" CssClass="btn btn-default" OnClick="BasketBallNextButton_Clicked" />
                         </div>
                     </div>
                     <div class="text-center">
@@ -99,12 +103,16 @@
                                 <asp:BoundField DataField="awayName" HeaderText="Away Team" Visible="true" />
                                 <asp:BoundField DataField="attendances" HeaderText="Attendances" Visible="true" />
                                 <asp:BoundField DataField="stadium" HeaderText="Stadium" Visible="true" />
+                                <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> Edit" NavigateUrl="~/GameCreator.aspx.cs"
+                            DataNavigateUrlFields="Id" DataNavigateUrlFormatString="GameCreator.aspx?Id={0}" 
+                            ItemStyle-CssClass="btn btn-primary btn-sm" ControlStyle-ForeColor="White"/>
                                 <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> Delete" ShowDeleteButton="true"
                                     ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
                             </Columns>
                         </asp:GridView>
                     </div>
                 </div>
+               </div>
             </div>
         </div>
         <div class="row">
@@ -113,16 +121,17 @@
                         <asp:LinkButton runat="server" CssClass="btn btn-collapse" OnClick="Clear_Click">                 
                         <img src="Assets/glyphicons_free/glyphicons/png/glyphicons-438-hockey.png" />
                         Hockey &raquo;</asp:LinkButton>
-                    <p class="collapse">Have a Hockey game displayed here with Team Name, scores, attendances and stadium</p>
+                    <div class="collapse">
+                    <p>Have a Hockey game displayed here with Team Name, scores, attendances and stadium</p>
                 <div class="row">
                         <div class="col-xs-4 col-md-4">
-                                <asp:Button Text="Previous" CssClass="btn btn-default" runat="server" OnClick="HockeyPreviousButton_Clicked" />
+                                <asp:Button Text="Previous Week" CssClass="btn btn-default" runat="server" OnClick="HockeyPreviousButton_Clicked" />
                         </div>
                         <div class="col-xs-4 col-md-4">
-                            Current week 
+                             <label>Date: </label> <asp:Label runat="server" ID="hockeyDateLabel"></asp:Label> 
                         </div>
                         <div class="col-xs-4 col-md-4">
-                                <asp:Button runat="server" Text="Next" CssClass="btn btn-default" OnClick="HockeyNextButton_Click" />
+                                <asp:Button runat="server" Text="Next Week" CssClass="btn btn-default" OnClick="HockeyNextButton_Click" />
                         </div>
                     </div>
                     <div class="text-center">
@@ -143,30 +152,35 @@
                                 <asp:BoundField DataField="awayName" HeaderText="Away Team" Visible="true" />
                                 <asp:BoundField DataField="attendances" HeaderText="Attendances" Visible="true" />
                                 <asp:BoundField DataField="stadium" HeaderText="Stadium" Visible="true" />
+                                <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> Edit" NavigateUrl="~/GameCreator.aspx.cs"
+                            DataNavigateUrlFields="Id" DataNavigateUrlFormatString="GameCreator.aspx?Id={0}" 
+                            ItemStyle-CssClass="btn btn-primary btn-sm" ControlStyle-ForeColor="White"/>
                                 <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> Delete" ShowDeleteButton="true"
                                     ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
                             </Columns>
                         </asp:GridView>
                     </div>
                 </div>
+               </div>
             </div>
         </div>
         <div class="row">
-            <div class="jumbotron">
+            <div class="jumbotron" style="margin-bottom:40px;">
                 <div class="span4 collapse-group">
                         <asp:LinkButton runat="server" CssClass="btn btn-collapse" OnClick="Clear_Click">                 
                         <img src="Assets/glyphicons_free/glyphicons/png/glyphicons-312-baseball.png" />
                         Baseball &raquo;</asp:LinkButton>
-                    <p class="collapse">Have a Baseball game displayed here with Team Name, scores, attendances and stadium</p>
+                    <div class="collapse">
+                    <p>Have a Baseball game displayed here with Team Name, scores, attendances and stadium</p>
                 <div class="row">
                         <div class="col-xs-4 col-md-4">
-                                <asp:Button Text="Previous" CssClass="btn btn-default" runat="server" OnClick="BaseballPreviousButton_Clicked" />
+                                <asp:Button Text="Previous Week" CssClass="btn btn-default" runat="server" OnClick="BaseballPreviousButton_Clicked" />
                         </div>
                         <div class="col-xs-4 col-md-4">
-                            Current week 
+                            <label>Date: </label> <asp:Label runat="server" ID="baseballDateLabel"></asp:Label> 
                         </div>
                         <div class="col-xs-4 col-md-4">
-                                <asp:Button runat="server" Text="Next" CssClass="btn btn-default" OnClick="BaseballNextButton_Clicked" />
+                                <asp:Button runat="server" Text="Next Week" CssClass="btn btn-default" OnClick="BaseballNextButton_Clicked" />
                         </div>
                     </div>
                     <div class="text-center">
@@ -187,11 +201,15 @@
                                 <asp:BoundField DataField="awayName" HeaderText="Away Team" Visible="true" />
                                 <asp:BoundField DataField="attendances" HeaderText="Attendances" Visible="true" />
                                 <asp:BoundField DataField="stadium" HeaderText="Stadium" Visible="true" />
+                                <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> Edit" NavigateUrl="~/GameCreator.aspx.cs"
+                            DataNavigateUrlFields="Id" DataNavigateUrlFormatString="GameCreator.aspx?Id={0}" 
+                            ItemStyle-CssClass="btn btn-primary btn-sm" ControlStyle-ForeColor="White"/>
                                 <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> Delete" ShowDeleteButton="true"
                                     ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
                             </Columns>
                         </asp:GridView>
                     </div>
+                 </div>
                 </div>
             </div>
         </div>

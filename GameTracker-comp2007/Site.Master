@@ -39,6 +39,10 @@
         </div>
     </form>
 
+    <footer class="navbar-inverse" style="text-align:center;color:white; opacity:.7;position:fixed;bottom:0px; width:100%">
+        <div>Copyright AFSS 2016</div>
+    </footer>
+
     <!-- JavaScript -->
     <script src="Scripts/jquery-2.2.3.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
