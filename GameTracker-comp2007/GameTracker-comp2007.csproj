@@ -124,7 +124,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Amex-Stadium-Brighton-2.jpg" />
+    <Content Include="Content\glyphicons-312-baseball.png" />
     <Content Include="Content\glyphicons-330-soccer-ball.png" />
+    <Content Include="Content\glyphicons-438-hockey.png" />
+    <Content Include="Content\glyphicons-463-basketball.png" />
+    <Content Include="Content\Logo.png" />
     <Content Include="GameCreator.aspx" />
     <Content Include="LogIn.aspx" />
     <Content Include="Logout.aspx" />

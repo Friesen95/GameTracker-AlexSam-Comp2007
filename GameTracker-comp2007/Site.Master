@@ -24,7 +24,7 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="row">
-                <img src="Assets/Logo.png" width="125" height="100"  style="float:left;" />
+                <img src="Content/Logo.png" width="125" height="100"  style="float:left;" />
                 <h1 class="title" >StatTastic</h1>
                 <% if (Session["userName"] != null)
                     { %>
