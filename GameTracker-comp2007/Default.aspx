@@ -70,7 +70,7 @@
             <div class="jumbotron">
                 <div class="span4 collapse-group">
                     <asp:LinkButton runat="server" CssClass="btn btn-collapse" OnClick="Clear_Click">
-                        <img src="Assets/glyphicons_free/glyphicons/png/glyphicons-463-basketball.png" />
+                        <img src="Content/glyphicons-463-basketball.png" />
                         Basketball &raquo;</asp:LinkButton>
                     <div class="collapse">
                     <p>Have a Basketball game displayed here with Team Name, scores, attendances and stadium</p>
@@ -119,7 +119,7 @@
             <div class="jumbotron">
                 <div class="span4 collapse-group">
                         <asp:LinkButton runat="server" CssClass="btn btn-collapse" OnClick="Clear_Click">                 
-                        <img src="Assets/glyphicons_free/glyphicons/png/glyphicons-438-hockey.png" />
+                        <img src="Content/glyphicons-438-hockey.png" />
                         Hockey &raquo;</asp:LinkButton>
                     <div class="collapse">
                     <p>Have a Hockey game displayed here with Team Name, scores, attendances and stadium</p>
@@ -168,7 +168,7 @@
             <div class="jumbotron" style="margin-bottom:40px;">
                 <div class="span4 collapse-group">
                         <asp:LinkButton runat="server" CssClass="btn btn-collapse" OnClick="Clear_Click">                 
-                        <img src="Assets/glyphicons_free/glyphicons/png/glyphicons-312-baseball.png" />
+                        <img src="Content/glyphicons-312-baseball.png" />
                         Baseball &raquo;</asp:LinkButton>
                     <div class="collapse">
                     <p>Have a Baseball game displayed here with Team Name, scores, attendances and stadium</p>
