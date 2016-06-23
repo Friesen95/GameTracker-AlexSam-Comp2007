@@ -38,6 +38,10 @@ namespace GameTracker_comp2007
                 authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
 
                 Session["userName"] = user.UserName;
+                if (user.UserName == "admin")
+                {
+                    Session["admin"] = true;
+                }
                 Response.Redirect("Default.aspx");
             }
             else

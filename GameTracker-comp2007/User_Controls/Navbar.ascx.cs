@@ -38,6 +38,9 @@ namespace GameTracker_comp2007
                 case "Contact":
                     contact.Attributes.Add("class", "active");
                     break;
+                case "Users":
+                    users.Attributes.Add("class", "active");
+                    break;
             }
         }
 

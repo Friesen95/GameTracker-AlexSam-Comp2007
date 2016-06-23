@@ -21,6 +21,36 @@ namespace GameTracker_comp2007
             //{
             //    this.GetUser();
             //}
+            if(!IsPostBack)
+            {
+                if(Request.QueryString.Count>0)
+                {
+                    passwordPlaceHolder.Visible = false;
+                    this.getUser();
+                }
+                else
+                {
+                    passwordPlaceHolder.Visible = true;
+                }
+            }
+
+        }
+
+        protected void getUser()
+        {
+            string UserID = Request.QueryString["Id"].ToString();
+
+            using (userConnection db = new userConnection())
+            {
+                AspNetUser updatedUser = (from user in db.AspNetUsers where user.Id == UserID select user).FirstOrDefault();
+                    
+                if(updatedUser!=null)
+                {
+                    userNameTextBox.Text = updatedUser.UserName;
+                    emailTextBox.Text = updatedUser.Email;
+                        
+                }
+            }
         }
 
        
@@ -50,6 +80,29 @@ namespace GameTracker_comp2007
 
         protected void RegisterButton_Click(object sender, EventArgs e)
         {
+            if(Request.QueryString.Count>0)
+            {
+                using (userConnection db = new userConnection())
+                {
+                    AspNetUser newUser = new AspNetUser();
+
+                    string UserID = Request.QueryString["Id"].ToString();
+
+                    newUser = (from users in db.AspNetUsers where users.Id == UserID select users).FirstOrDefault();
+
+                    newUser.UserName = userNameTextBox.Text;
+                    newUser.Email = emailTextBox.Text;
+
+                    db.SaveChanges();
+                    // redirect to users list
+                    Response.Redirect("Users.aspx");
+
+                }
+            }
+
+
+
+
             var userStore = new UserStore<IdentityUser>();
             var userManager = new UserManager<IdentityUser>(userStore);
 
@@ -66,6 +119,10 @@ namespace GameTracker_comp2007
             // check if succesfully registered
             if(result.Succeeded)
             {
+                if(Session["admin"]!=null)
+                {
+                    Response.Redirect("Users.aspx");
+                }
                 // authenticate and login our new user
                 var authenticationmanager = HttpContext.Current.GetOwinContext().Authentication;
                 var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
@@ -75,6 +132,10 @@ namespace GameTracker_comp2007
 
                 // redirect to default page
                 Session["userName"] = user.UserName;
+                if(user.UserName == "admin")
+                {
+                    Session["admin"] = true;
+                }
                 Response.Redirect("Default.aspx");
             }
             else

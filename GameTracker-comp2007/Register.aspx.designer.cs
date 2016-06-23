@@ -31,6 +31,15 @@ namespace GameTracker_comp2007 {
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
         
         /// <summary>
+        /// passwordPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder passwordPlaceHolder;
+        
+        /// <summary>
         /// passwordTextBox control.
         /// </summary>
         /// <remarks>

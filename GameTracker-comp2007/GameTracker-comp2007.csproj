@@ -143,6 +143,16 @@
       <DependentUpon>stattasticdb.edmx</DependentUpon>
       <LastGenOutput>stattasticdb.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\userModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>userModel.edmx</DependentUpon>
+      <LastGenOutput>userModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\userModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>userModel.edmx</DependentUpon>
+      <LastGenOutput>userModel.cs</LastGenOutput>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="Register.aspx" />
     <Content Include="Site.Master" />
@@ -153,6 +163,13 @@
     </EntityDeploy>
     <Content Include="Models\stattasticdb.edmx.diagram">
       <DependentUpon>stattasticdb.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\userModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>userModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\userModel.edmx.diagram">
+      <DependentUpon>userModel.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -181,6 +198,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Users.aspx" />
     <Content Include="User_Controls\Jumbotron.ascx" />
     <Content Include="User_Controls\Navbar.ascx" />
     <Content Include="Scripts\app.js" />
@@ -233,6 +251,18 @@
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>userModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>userModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>userModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>userModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\game.cs">
       <DependentUpon>stattasticdb.tt</DependentUpon>
     </Compile>
@@ -254,6 +284,21 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>stattasticdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\userModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>userModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\userModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>userModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\userModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>userModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -262,6 +307,13 @@
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User_Controls\Jumbotron.ascx.cs">
       <DependentUpon>Jumbotron.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -6,7 +6,7 @@
     Date: June 6th, 2016
     Description: This is our COntact page where you can send us an email
     -->
-    <div class="container">
+    <div class="container jumbotron">
         <div class="row">
             <div class="col-md-offset-2 col-md-6 text-center">
                 <h1>Contact Us</h1>

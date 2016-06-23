@@ -29,6 +29,7 @@
                 <label class="" for="emailTextBox">Email</label>
                 <asp:TextBox runat="server" id="emailTextBox" CssClass="form-control" placeholder="Email" required="true"></asp:TextBox>
             </div>
+            <asp:PlaceHolder runat="server" ID="passwordPlaceHolder">
             <div class="form-group">
                 <label class="" for="passwordTextBox">Password</label>
                 <asp:TextBox runat="server" id="passwordTextBox" TextMode="Password" CssClass="form-control" placeholder="Password" required="true"></asp:TextBox>
@@ -38,6 +39,7 @@
                 <asp:TextBox runat="server" id="confirmPasswordTextBox" TextMode="Password" CssClass="form-control" placeholder="Confirm Password" required="true"></asp:TextBox>
                 <asp:CompareValidator runat="server" ControlToValidate="confirmPasswordTextBox" CssClass="validationError" ControlToCompare="passwordTextBox" ErrorMessage="No match" ToolTip="passwords must be the same"></asp:CompareValidator>
             </div>            
+                </asp:PlaceHolder>
             <div class="text-right">
                 <asp:Button Text="Cancel" runat="server" ID="CancelButton" CssClass="btn btn-warning btn-lg" CausesValidation="false" UseSubmitBehavior="false" OnClick="CancelButton_Click" />
                 <asp:Button Text="Save" ID="RegisterButton" runat="server" CssClass="btn btn-primary btn-lg" OnClick="RegisterButton_Click" CausesValidation="true" />
