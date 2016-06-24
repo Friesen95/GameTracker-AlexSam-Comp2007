@@ -36,8 +36,8 @@
                                     <asp:Button Text="Next Week" CssClass="btn btn-default" runat="server" OnClick="SoccerNextButton_Clicked" />
                             </div>
                         </div>
-                        <div class="text-center">
-                            <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover scrollable"
+                        <div class="text-center scrollable">
+                            <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
                                 ID="SoccerGamesGridView" AutoGenerateColumns="false" DataKeyNames="Id"
                                 OnRowDeleting="SoccerGamesGridView_RowDeleting" AllowPaging="true"
                                 PageSize="4" OnPageIndexChanging="SoccerGamesGridView_PageIndexChanging"
@@ -85,8 +85,8 @@
                                 <asp:Button runat="server" Text="Next Week" CssClass="btn btn-default" OnClick="BasketBallNextButton_Clicked" />
                         </div>
                     </div>
-                    <div class="text-center">
-                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover scrollable"
+                    <div class="text-center scrollable">
+                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
                             ID="BasketballGamesGridView" AutoGenerateColumns="false" DataKeyNames="Id"
                             OnRowDeleting="BasketballGamesGridView_RowDeleting" AllowPaging="true"
                             PageSize="4" OnPageIndexChanging="BasketballGamesGridView_PageIndexChanging"
@@ -134,8 +134,8 @@
                                 <asp:Button runat="server" Text="Next Week" CssClass="btn btn-default" OnClick="HockeyNextButton_Click" />
                         </div>
                     </div>
-                    <div class="text-center">
-                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover scrollable"
+                    <div class="text-center scrollable">
+                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
                             ID="HockeyGamesGridView" AutoGenerateColumns="false" DataKeyNames="Id"
                             OnRowDeleting="HockeyGamesGridView_RowDeleting" AllowPaging="true"
                             PageSize="4" OnPageIndexChanging="HockeyGamesGridView_PageIndexChanging"
@@ -183,8 +183,8 @@
                                 <asp:Button runat="server" Text="Next Week" CssClass="btn btn-default" OnClick="BaseballNextButton_Clicked" />
                         </div>
                     </div>
-                    <div class="text-center">
-                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover scrollable"
+                    <div class="text-center scrollable">
+                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
                             ID="BaseballGamesGridView" AutoGenerateColumns="false" DataKeyNames="Id"
                             OnRowDeleting="BaseballGamesGridView_RowDeleting" AllowPaging="true"
                             PageSize="4" OnPageIndexChanging="BaseballGamesGridView_PageIndexChanging"
