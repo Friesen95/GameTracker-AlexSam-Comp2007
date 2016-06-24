@@ -17,7 +17,8 @@ a{
 }
 body {
     background-image: url(Amex-Stadium-Brighton-2.jpg);
-    background-repeat: round;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .jumbotron{
     background: rgba(255,235,59, 0.65); 
