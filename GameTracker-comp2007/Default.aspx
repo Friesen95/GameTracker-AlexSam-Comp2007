@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
+                            <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover scrollable"
                                 ID="SoccerGamesGridView" AutoGenerateColumns="false" DataKeyNames="Id"
                                 OnRowDeleting="SoccerGamesGridView_RowDeleting" AllowPaging="true"
                                 PageSize="4" OnPageIndexChanging="SoccerGamesGridView_PageIndexChanging"
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
+                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover scrollable"
                             ID="BasketballGamesGridView" AutoGenerateColumns="false" DataKeyNames="Id"
                             OnRowDeleting="BasketballGamesGridView_RowDeleting" AllowPaging="true"
                             PageSize="4" OnPageIndexChanging="BasketballGamesGridView_PageIndexChanging"
@@ -135,7 +135,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
+                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover scrollable"
                             ID="HockeyGamesGridView" AutoGenerateColumns="false" DataKeyNames="Id"
                             OnRowDeleting="HockeyGamesGridView_RowDeleting" AllowPaging="true"
                             PageSize="4" OnPageIndexChanging="HockeyGamesGridView_PageIndexChanging"
@@ -184,7 +184,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
+                        <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover scrollable"
                             ID="BaseballGamesGridView" AutoGenerateColumns="false" DataKeyNames="Id"
                             OnRowDeleting="BaseballGamesGridView_RowDeleting" AllowPaging="true"
                             PageSize="4" OnPageIndexChanging="BaseballGamesGridView_PageIndexChanging"
