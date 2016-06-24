@@ -17,6 +17,15 @@
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
     <link href="Content/app.css" rel="stylesheet" />
+    
+    <script type="text/javascript" language="javascript">
+$(document).ready(function() 
+{
+  $('#<%=SoccerGamesGridView.ClientID %>').Scrollable();
+}
+)
+</script>
+    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
